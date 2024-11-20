@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_book"
+        android:icon="@drawable/ic_book"
+        android:title="@string/book" />
+
+    <item
+        android:id="@+id/navigation_character"
+        android:icon="@drawable/ic_character"
+        android:title="@string/character" />
+
+    <item
+        android:id="@+id/navigation_house"
+        android:icon="@drawable/ic_house"
+        android:title="@string/house" />
+
+    <item
+        android:id="@+id/navigation_spell"
+        android:icon="@drawable/ic_spell"
+        android:title="@string/spell" />
+
+
+</menu>
