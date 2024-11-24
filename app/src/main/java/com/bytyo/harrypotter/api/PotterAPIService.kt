@@ -1,5 +1,9 @@
 package com.bytyo.harrypotter.api
 
+import com.bytyo.harrypotter.model.Books
+import com.bytyo.harrypotter.model.Characters
+import com.bytyo.harrypotter.model.Houses
+import com.bytyo.harrypotter.model.Spells
 import retrofit2.http.GET
 import retrofit2.http.Path
 

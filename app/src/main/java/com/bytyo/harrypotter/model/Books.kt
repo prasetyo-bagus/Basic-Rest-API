@@ -1,4 +1,4 @@
-package com.bytyo.harrypotter.api
+package com.bytyo.harrypotter.model
 
 data class Books(
     val number: Int,
