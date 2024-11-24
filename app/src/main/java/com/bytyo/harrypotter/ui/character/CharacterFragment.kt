@@ -7,15 +7,20 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import com.bytyo.harrypotter.CharacterAdapter
 import com.bytyo.harrypotter.databinding.FragmentCharacterBinding
 
 class CharacterFragment : Fragment() {
 
     private var _binding: FragmentCharacterBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var adapter: CharacterAdapter
+    private lateinit var recyclerView: RecyclerView
+    //
+    private lateinit var characterViewModel: CharacterViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,10 +33,30 @@ class CharacterFragment : Fragment() {
         _binding = FragmentCharacterBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        characterViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+//        val textView: TextView = binding.textHome
+//        characterViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
+
+
+        //
+
+
+        // Inisialisai RecycleView dan Adapter
+        recyclerView = binding.rvCharacter
+        adapter = CharacterAdapter(emptyList())
+        recyclerView.adapter = adapter
+
+        // Observasi data character dari ViewModel
+        characterViewModel.getCharacters().observe(viewLifecycleOwner) {
+            characters ->
+            adapter = CharacterAdapter(characters)
+            recyclerView.adapter = adapter
         }
+
+
+        //
+
         return root
     }
 

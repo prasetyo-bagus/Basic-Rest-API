@@ -1,4 +1,4 @@
-package com.bytyo.harrypotter.api
+package com.bytyo.harrypotter.model
 
 data class Characters(
     //    @SerializedName("full_name")
